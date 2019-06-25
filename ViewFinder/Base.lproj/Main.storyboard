@@ -50,7 +50,7 @@
         <!--Add New Photo-->
         <scene sceneID="due-uD-sSD">
             <objects>
-                <viewController id="66j-No-rYF" sceneMemberID="viewController">
+                <viewController id="66j-No-rYF" customClass="AddPhotoViewController" customModule="ViewFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QdI-5L-RQz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,11 +59,17 @@
                                 <rect key="frame" x="245" y="433" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Photo Library"/>
+                                <connections>
+                                    <action selector="photoLibraryTapped:" destination="66j-No-rYF" eventType="touchUpInside" id="3bI-Oc-BO8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uT0-C7-hoA">
-                                <rect key="frame" x="79" y="433" width="54" height="30"/>
+                                <rect key="frame" x="79" y="433" width="54" height="117"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="cameraTapped:" destination="66j-No-rYF" eventType="touchUpInside" id="Zrp-yb-fZ5"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cam" translatesAutoresizingMaskIntoConstraints="NO" id="xIp-v0-Dle">
                                 <rect key="frame" x="49" y="188" width="317" height="169"/>
@@ -80,12 +86,19 @@
                                 <rect key="frame" x="354" y="756" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="savedTapped:" destination="66j-No-rYF" eventType="touchUpInside" id="Im4-s0-c2C"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="47q-B6-y1K"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Photo" id="zdc-yf-v7b"/>
+                    <connections>
+                        <outlet property="captionText" destination="Ae7-3b-3MM" id="6ea-wy-VXk"/>
+                        <outlet property="photoPlaceholder" destination="xIp-v0-Dle" id="pVn-kf-pID"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WaB-Gj-9XS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
